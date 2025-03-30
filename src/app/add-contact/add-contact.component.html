@@ -1,0 +1,64 @@
+<div class="form-container">
+  <h1 class="add-title">Add Contact</h1>
+  <div class="container justify-content-center">
+    <form
+      #addContactForm="ngForm"
+      (ngSubmit)="OnSubmit(addContactForm)"
+      novalidate
+    >
+      <div class="row">
+        <label class="col" for="firstName">First Name:</label>
+        <input
+          class="col"
+          type="text"
+          [(ngModel)]="subFirstName"
+          name="firstName"
+          required
+        />
+      </div>
+
+      <div class="row">
+        <label for="lastName" class="col">Last Name:</label>
+        <input
+          type="text"
+          class="col"
+          [(ngModel)]="subLastName"
+          name="lastName"
+          required
+        />
+      </div>
+
+      <div class="row">
+        <label for="email" class="col">Email Address:</label>
+        <input
+          type="email"
+          class="col"
+          [(ngModel)]="subEmail"
+          name="email"
+          required
+          email
+        />
+      </div>
+
+      <div class="row">
+        <label for="phone" class="col">Phone Number:</label>
+        <input
+          type="tel"
+          class="col"
+          [(ngModel)]="subPhone"
+          name="phone"
+          required
+          pattern="^[0-9]{10}$"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg"
+        [disabled]="addContactForm.invalid"
+      >
+        Add Contact
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="contacts">
+  <h1>Contacts</h1>
+  @for (contact of contactService.contacts; track contact; let index = $index) {
+  <app-contact-card
+    [contact]="contact"
+    [id]="index"
+    (deleteOutput)="deleteCard(index)"
+  ></app-contact-card>
+  } @empty {
+  <p class="no-contact">There are no contacts to display.</p>
+  }
+</div>

@@ -1,0 +1,9 @@
+.card
+{
+    margin-top: 2rem;
+    background-color: lavender;
+    button
+    {
+        margin-right: 2rem;
+    }
+}

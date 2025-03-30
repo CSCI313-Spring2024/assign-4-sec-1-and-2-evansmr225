@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <p>First Name: {{ contact.firstName }}</p>
+    <p>Last Name: {{ contact.lastName }}</p>
+    <p>Email Address: {{ contact.emailAddress }}</p>
+    <p>Phone Number: {{ contact.phoneNumber }}</p>
+    <button class="btn btn-primary" (click)="sendDelete()">Delete</button>
+    <a [routerLink]="['/update-component', id]">
+      <button class="btn btn-primary">Update</button>
+    </a>
+  </div>
+</div>

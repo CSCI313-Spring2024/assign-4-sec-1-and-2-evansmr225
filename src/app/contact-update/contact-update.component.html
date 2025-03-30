@@ -1,0 +1,65 @@
+<h1 class="page-title text-center">Update Contact</h1>
+<div class="container form-container">
+  <form
+    #updateContactForm="ngForm"
+    (ngSubmit)="OnSubmit(updateContactForm)"
+    novalidate
+  >
+    <div class="row">
+      <label for="firstName" class="col">First Name:</label>
+      <input
+        class="col"
+        type="text"
+        [(ngModel)]="subFirstName"
+        name="firstName"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <label class="col" for="lastName">Last Name:</label>
+      <input
+        class="col"
+        type="text"
+        [(ngModel)]="subLastName"
+        name="lastName"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <label class="col" for="email">Email Address:</label>
+      <input
+        class="col"
+        type="email"
+        [(ngModel)]="subEmail"
+        name="email"
+        required
+        email
+      />
+    </div>
+
+    <div class="row">
+      <label class="col" for="phone">Phone Number:</label>
+      <input
+        class="col"
+        type="tel"
+        [(ngModel)]="subPhone"
+        name="phone"
+        required
+        pattern="^[0-9]{10}$"
+      />
+    </div>
+
+    <a routerLink="">
+      <button class="btn btn-primary btn-lg">Cancel</button>
+    </a>
+    <button
+      class="btn btn-primary btn-lg"
+      type="submit"
+      [disabled]="updateContactForm.invalid"
+    >
+      Update Contact
+    </button>
+  </form>
+</div>
