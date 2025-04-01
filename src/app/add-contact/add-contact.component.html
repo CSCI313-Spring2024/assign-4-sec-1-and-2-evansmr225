@@ -1,6 +1,7 @@
 <div class="form-container">
   <h1 class="add-title">Add Contact</h1>
   <div class="container justify-content-center">
+    <!-- Form uses angulars form validation, can only be submitted if required fields are provided and email and phone number are valid -->
     <form
       #addContactForm="ngForm"
       (ngSubmit)="OnSubmit(addContactForm)"
@@ -27,7 +28,8 @@
           required
         />
       </div>
-
+      
+      <!-- Form can only be submitted if a valid email address is provided -->
       <div class="row">
         <label for="email" class="col">Email Address:</label>
         <input
@@ -38,8 +40,10 @@
           required
           email
         />
+        <p>Must be in the form domain&#64;example.com</p>
       </div>
-
+      
+      <!-- Form can only be submitted if a valid phone number is provided -->
       <div class="row">
         <label for="phone" class="col">Phone Number:</label>
         <input
@@ -48,8 +52,9 @@
           [(ngModel)]="subPhone"
           name="phone"
           required
-          pattern="^[0-9]{10}$"
+          pattern="^\d{10}$|^\d{3}-\d{3}-\d{4}$"
         />
+        <p>Must be in the form XXX-XXX-XXXX or XXXXXXXXXX</p>
       </div>
 
       <button
