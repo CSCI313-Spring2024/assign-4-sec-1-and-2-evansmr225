@@ -1,69 +1,72 @@
-<div class="form-container">
-  <h1 class="add-title">Add Contact</h1>
-  <div class="container justify-content-center">
-    <!-- Form uses angulars form validation, can only be submitted if required fields are provided and email and phone number are valid -->
-    <form
-      #addContactForm="ngForm"
-      (ngSubmit)="OnSubmit(addContactForm)"
-      novalidate
+<div class="container">
+  <h1 class="add-title text-center mt-5">Add Contact</h1>
+</div>
+<div class="container form-container">
+  <!-- Form uses angulars form validation, can only be submitted if required fields are provided and email and phone number are valid -->
+  <form
+    #addContactForm="ngForm"
+    (ngSubmit)="OnSubmit(addContactForm)"
+    novalidate
+  >
+    <div class="row">
+      <label class="col" for="firstName">First Name:</label>
+      <input
+        class="col"
+        type="text"
+        [(ngModel)]="subFirstName"
+        name="firstName"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <label for="lastName" class="col">Last Name:</label>
+      <input
+        type="text"
+        class="col"
+        [(ngModel)]="subLastName"
+        name="lastName"
+        required
+      />
+    </div>
+
+    <!-- Form can only be submitted if a valid email address is provided -->
+    <div class="row">
+      <label for="email" class="col">Email Address:</label>
+      <input
+        type="email"
+        class="col"
+        [(ngModel)]="subEmail"
+        name="email"
+        required
+        email
+      />
+      <p>Must be in the form domain&#64;example.com</p>
+    </div>
+
+    <!-- Form can only be submitted if a valid phone number is provided -->
+    <div class="row">
+      <label for="phone" class="col">Phone Number:</label>
+      <input
+        type="tel"
+        class="col"
+        [(ngModel)]="subPhone"
+        name="phone"
+        required
+        pattern="^\d{10}$|^\d{3}-\d{3}-\d{4}$"
+      />
+      <p>Must be in the form XXX-XXX-XXXX or XXXXXXXXXX</p>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary btn-lg"
+      [disabled]="addContactForm.invalid"
     >
-      <div class="row">
-        <label class="col" for="firstName">First Name:</label>
-        <input
-          class="col"
-          type="text"
-          [(ngModel)]="subFirstName"
-          name="firstName"
-          required
-        />
-      </div>
-
-      <div class="row">
-        <label for="lastName" class="col">Last Name:</label>
-        <input
-          type="text"
-          class="col"
-          [(ngModel)]="subLastName"
-          name="lastName"
-          required
-        />
-      </div>
-      
-      <!-- Form can only be submitted if a valid email address is provided -->
-      <div class="row">
-        <label for="email" class="col">Email Address:</label>
-        <input
-          type="email"
-          class="col"
-          [(ngModel)]="subEmail"
-          name="email"
-          required
-          email
-        />
-        <p>Must be in the form domain&#64;example.com</p>
-      </div>
-      
-      <!-- Form can only be submitted if a valid phone number is provided -->
-      <div class="row">
-        <label for="phone" class="col">Phone Number:</label>
-        <input
-          type="tel"
-          class="col"
-          [(ngModel)]="subPhone"
-          name="phone"
-          required
-          pattern="^\d{10}$|^\d{3}-\d{3}-\d{4}$"
-        />
-        <p>Must be in the form XXX-XXX-XXXX or XXXXXXXXXX</p>
-      </div>
-
-      <button
-        type="submit"
-        class="btn btn-primary btn-lg"
-        [disabled]="addContactForm.invalid"
-      >
-        Add Contact
-      </button>
-    </form>
-  </div>
+      Add Contact
+    </button>
+  </form>
+  <a routerLink="">
+    <button class="btn btn-primary btn-lg">See Contacts</button>
+  </a>
 </div>

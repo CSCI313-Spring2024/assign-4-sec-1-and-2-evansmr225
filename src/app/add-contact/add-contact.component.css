@@ -1,6 +1,12 @@
+.add-title{
+    background-color: beige;
+    padding: 2rem;
+}
+
 .form-container{
     margin-top: 5rem;
     margin-bottom: 5rem;
+    border: 2px solid;
     label
     {
         margin-top: 2rem;

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { Router, RouterModule, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterLink} from '@angular/router';
 import { ContactService } from '../contact.service';
 import { Contact } from '../../contact';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-update',
-  imports: [FormsModule, RouterModule, RouterLink, RouterOutlet],
+  imports: [FormsModule, RouterModule, RouterLink],
   templateUrl: './contact-update.component.html',
   styleUrl: './contact-update.component.css'
 })

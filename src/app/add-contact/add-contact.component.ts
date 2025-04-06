@@ -2,12 +2,13 @@ import { Component, inject} from '@angular/core';
 import { ContactService } from '../contact.service';
 import { FormsModule } from '@angular/forms';
 import { Contact } from '../../contact';
+import { RouterLink } from '@angular/router';
 
 // Contains form used to add contacts
 
 @Component({
   selector: 'app-add-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './add-contact.component.html',
   styleUrl: './add-contact.component.css'
 })

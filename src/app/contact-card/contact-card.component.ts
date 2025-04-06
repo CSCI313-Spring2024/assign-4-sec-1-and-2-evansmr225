@@ -8,7 +8,7 @@ import { RouterModule, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-contact-card',
-  imports: [RouterModule, RouterLink, RouterOutlet, PhoneFormatPipe],
+  imports: [RouterModule, RouterLink, PhoneFormatPipe],
   templateUrl: './contact-card.component.html',
   styleUrl: './contact-card.component.css'
 })
